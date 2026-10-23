@@ -1,0 +1,166 @@
+/* ==========================================================================
+   FLIPSTUCK - COURSE EXPLORE PAGE DESIGN SYSTEM & STYLESHEET
+   1:1 Pixel-Accurate Implementation of Course Explore Page.png
+   Responsive across Mobile, Tablet, Desktop, and Ultrawide displays.
+   ========================================================================== */
+
+/* --- CSS Variables & Design Tokens --- */
+:root {
+  /* Brand Colors */
+  --color-brand: #d0ea05;
+  --color-brand-hover: #c0d804;
+  --color-brand-light: #eaf874;
+  --color-brand-subtle: #f5fbc7;
+  --color-brand-glow: rgba(208, 234, 5, 0.45);
+  --color-brand-text: #8ea800;
+  --color-brand-accent: #9bc800;
+  
+  /* Neutral Dark & Light Palette */
+  --color-text-primary: #121212;
+  --color-text-secondary: #555555;
+  --color-text-muted: #777777;
+  --color-text-subtle: #999999;
+  --color-bg-page: #fdfdfd;
+  --color-bg-subtle: #f8f9fa;
+  --color-card-bg: #ffffff;
+  
+  /* Borders & Dividers */
+  --color-border: #f0f0f0;
+  --color-border-card: #eef0f2;
+  --color-border-hover: #d0ea05;
+  --color-border-input: #e2e8f0;
+  
+  /* Star & Ratings */
+  --color-star-yellow: #f8b805;
+  --color-badge-bg: #d0ea05;
+  --color-badge-text: #121212;
+  
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif-italic: 'Playfair Display', 'Instrument Serif', Georgia, serif;
+  
+  /* Spacing & Layout */
+  --max-width: 1240px;
+  --header-height: 80px;
+  --radius-card: 16px;
+  --radius-sm: 8px;
+  --radius-pill: 9999px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 12px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-search: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Global Reset & Box Sizing --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button, input, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* --- Accessibility: Skip to Content --- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  background: var(--color-brand);
+  color: #000;
+  padding: 10px 16px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  z-index: 10000;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 15px;
+}
+
+/* --- Typography Utilities --- */
+.serif-italic {
+  font-family: var(--font-serif-italic);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-brand);
+  color: var(--color-text-primary);
+  box-shadow: 0 4px 12px var(--color-brand-glow);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(208, 234, 5, 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-sm {
+  padding: 9px 20px;
+  font-size: 0.88rem;
+}
+
