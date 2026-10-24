@@ -372,3 +372,66 @@ button {
   right: 0;
 }
 
+/* ==========================================================================
+   BREADCRUMB & HERO SEARCH SECTION
+   ========================================================================== */
+.explore-hero-section {
+  padding: 36px 24px 44px;
+  text-align: center;
+  background-color: var(--color-bg-page);
+}
+
+.explore-hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Breadcrumb */
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.breadcrumb-link {
+  color: var(--color-text-secondary);
+  transition: var(--transition);
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-text-primary);
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.breadcrumb-current {
+  color: var(--color-brand-accent);
+  font-weight: 600;
+}
+
+/* Hero Title */
+.explore-hero-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin-bottom: 28px;
+}
+
+.explore-hero-title .serif-italic {
+  font-weight: 500;
+  font-size: 1.05em;
+  letter-spacing: -0.01em;
+}
+
