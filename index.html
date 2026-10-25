@@ -102,6 +102,39 @@
         </form>
       </div>
     </section>
+
+    <!-- ================= MAIN EXPLORE CONTENT & FILTERS ================= -->
+    <section class="explore-main-section" id="exploreGrid">
+      <div class="explore-layout-container">
+        
+        <!-- ================= FILTER SIDEBAR (PURE HTML & CSS) ================= -->
+        <aside class="filter-sidebar" id="filterSidebar" aria-label="Course Filters">
+          <form method="GET" action="#exploreGrid">
+            <div class="sidebar-header-row">
+              <h3 class="filter-group-title" style="margin-bottom: 0;">Filters</h3>
+            </div>
+
+            <!-- Group 1: Categories -->
+            <div class="filter-group" id="categories">
+              <h3 class="filter-group-title">Categories</h3>
+              <ul class="filter-options-list">
+                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="web-development"><span>Web Development</span></label></li>
+                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="graphic-design"><span>Graphic Design</span></label></li>
+                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="data-science"><span>Data Science</span></label></li>
+                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="computer-basics"><span>Computer Basics</span></label></li>
+                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="video-editing"><span>Video Editing</span></label></li>
+                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="beauty-lifestyle"><span>Beauty &amp; Lifestyle</span></label></li>
+                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="digital-marketing"><span>Digital Marketing</span></label></li>
+                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="music"><span>Music</span></label></li>
+              </ul>
+            </div>
+          </form>
+        </aside>
+
+        <div class="explore-main-content">
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
