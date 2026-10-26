@@ -193,7 +193,33 @@
           </form>
         </aside>
 
-        <div class="explore-main-content">
+                <div class="explore-main-content">
+          <!-- Top Row Header -->
+          <div class="content-header-row">
+            <div class="content-header-left">
+              <h2 class="section-main-title">Explore all courses</h2>
+              <p class="section-subtitle">Discover courses to help you learn, grow, and succeed.</p>
+            </div>
+
+            <!-- Desktop Sort Dropdown -->
+            <div class="sort-container">
+              <label for="desktopSortSelect" class="sort-label">Sort by:</label>
+              <div class="sort-select-wrapper">
+                <select id="desktopSortSelect" class="sort-select" aria-label="Sort courses">
+                  <option value="popular">Most Popular</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                </select>
+                <svg class="sort-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="courses-grid" id="coursesGrid" role="region" aria-label="Courses Catalog">
+          </div>
         </div>
       </div>
     </section>

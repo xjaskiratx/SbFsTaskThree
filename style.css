@@ -692,3 +692,125 @@ button {
   background: var(--color-brand-subtle);
 }
 
+/* ==========================================================================
+   RIGHT CONTENT: GRID HEADER & COURSE CARDS
+   ========================================================================== */
+.explore-main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content Header Row */
+.content-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.content-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section-main-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.section-subtitle {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+}
+
+/* Sort By Dropdown */
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.sort-select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.sort-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-sm);
+  padding: 7px 32px 7px 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.sort-select:hover {
+  border-color: #cbd5e1;
+}
+
+.sort-select:focus {
+  border-color: var(--color-brand-accent);
+  box-shadow: 0 0 0 2px rgba(208, 234, 5, 0.25);
+}
+
+.sort-chevron-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 14px;
+  height: 14px;
+  color: #64748b;
+}
+
+/* Active Filter Summary Bar */
+.active-filters-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  font-size: 0.84rem;
+}
+
+.active-filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.active-filter-tag button {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.active-filter-tag button:hover {
+  color: #0f172a;
+}
+
