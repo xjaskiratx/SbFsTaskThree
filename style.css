@@ -861,3 +861,27 @@ button {
   transform: scale(1.04);
 }
 
+/* Pill Badge on Thumbnail */
+.card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--color-brand);
+  color: #121212;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  letter-spacing: -0.01em;
+  z-index: 2;
+}
+
+.card-badge.trending {
+  background-color: #c9e403;
+}
+
+.card-badge.popular {
+  background-color: #d6f007;
+}
+
