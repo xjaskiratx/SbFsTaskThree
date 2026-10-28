@@ -5,31 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explore Courses - FlipStuck | Find the right course for your next step</title>
   <meta name="description" content="Discover courses to help you learn, grow, and succeed with FlipStuck. Explore top-rated masterclasses in Web Development, UI/UX Design, Data Science, and more.">
+  
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Explore Courses - FlipStuck">
+  <meta property="og:description" content="Find the right course for your next step. Explore web development, design, marketing, data science, and more.">
+  <meta property="og:image" content="Assets-2/hero-image.png">
+  
+  <!-- Preconnect Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Favicons & Manifest -->
   <link rel="icon" type="image/x-icon" href="Assets-2/favicon.ico">
+  <link rel="shortcut icon" href="Assets-2/favicon.ico">
+  <link rel="apple-touch-icon" href="Assets-2/favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="top"></div>
+
+  <!-- Skip to Content Link -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
   <!-- Pure CSS Mobile Menu Toggle -->
   <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle-checkbox" aria-hidden="true" hidden>
 
-    <!-- Pure CSS Mobile Filter Toggle -->
+  <!-- Pure CSS Mobile Filter Toggle -->
   <input type="checkbox" id="mobile-filter-toggle" class="mobile-filter-toggle-checkbox" aria-hidden="true" hidden>
 
+  <!-- ================= HEADER / NAVBAR ================= -->
   <header class="site-header" id="siteHeader">
     <div class="header-container">
       <a href="index.html" class="brand-logo" aria-label="FlipStuck Home">
         <img src="Assets-2/logo-flip.svg" alt="FlipStuck" class="logo-img" width="140" height="38">
       </a>
+      
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="../T1/TaskOne/index.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link active" aria-current="page">Courses</a>
         <a href="#categories" class="nav-link">Categories</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
+
       <div class="header-right">
         <div class="header-action">
           <a href="#exploreGrid" class="btn btn-primary btn-sm">Explore Courses</a>
@@ -70,6 +92,10 @@
       </div>
     </div>
   </aside>
+
+  <!-- Pure CSS Mobile Filter Backdrop -->
+  <label for="mobile-filter-toggle" class="filter-backdrop" id="filterBackdrop"></label>
+
   <main id="mainContent">
     <!-- ================= BREADCRUMB & HERO SEARCH ================= -->
     <section class="explore-hero-section">
@@ -109,6 +135,7 @@
     <!-- ================= MAIN EXPLORE CONTENT & FILTERS ================= -->
     <section class="explore-main-section" id="exploreGrid">
       <div class="explore-layout-container">
+        
         <!-- Mobile Filter Bar (Visible on mobile/tablet) -->
         <div class="mobile-filter-bar">
           <label for="mobile-filter-toggle" class="mobile-filter-trigger" aria-label="Open filter sidebar">
@@ -125,11 +152,23 @@
             </svg>
             <span>Filters</span>
           </label>
+          
+          <div class="sort-container">
+            <label for="mobileSortSelect" class="sort-label">Sort by:</label>
+            <div class="sort-select-wrapper">
+              <select id="mobileSortSelect" class="sort-select" aria-label="Sort courses">
+                <option value="popular">Most Popular</option>
+                <option value="rating">Highest Rated</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+              </select>
+              <svg class="sort-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
         </div>
 
-        <!-- Pure CSS Mobile Filter Backdrop -->
-        <label for="mobile-filter-toggle" class="filter-backdrop" id="filterBackdrop"></label>
-        
         <!-- ================= FILTER SIDEBAR (PURE HTML & CSS) ================= -->
         <aside class="filter-sidebar" id="filterSidebar" aria-label="Course Filters">
           <form method="GET" action="#exploreGrid">
@@ -147,53 +186,133 @@
             <div class="filter-group" id="categories">
               <h3 class="filter-group-title">Categories</h3>
               <ul class="filter-options-list">
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="web-development"><span>Web Development</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="graphic-design"><span>Graphic Design</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="data-science"><span>Data Science</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="computer-basics"><span>Computer Basics</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="video-editing"><span>Video Editing</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="beauty-lifestyle"><span>Beauty &amp; Lifestyle</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="digital-marketing"><span>Digital Marketing</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="music"><span>Music</span></label></li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="category" value="web-development">
+                    <span>Web Development</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="category" value="graphic-design">
+                    <span>Graphic Design</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="category" value="data-science">
+                    <span>Data Science</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="category" value="computer-basics">
+                    <span>Computer Basics</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="category" value="video-editing">
+                    <span>Video Editing</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="category" value="beauty-lifestyle">
+                    <span>Beauty &amp; Lifestyle</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="category" value="digital-marketing">
+                    <span>Digital Marketing</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="category" value="music">
+                    <span>Music</span>
+                  </label>
+                </li>
               </ul>
             </div>
 
             <hr class="filter-divider">
+
             <!-- Group 2: Level -->
             <div class="filter-group">
               <h3 class="filter-group-title">Level</h3>
               <ul class="filter-options-list">
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="level" value="beginner"><span>Beginner</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="level" value="intermediate"><span>Intermediate</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="level" value="advanced"><span>Advanced</span></label></li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="level" value="beginner">
+                    <span>Beginner</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="level" value="intermediate">
+                    <span>Intermediate</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="level" value="advanced">
+                    <span>Advanced</span>
+                  </label>
+                </li>
               </ul>
             </div>
 
             <hr class="filter-divider">
+
             <!-- Group 3: Price -->
             <div class="filter-group">
               <h3 class="filter-group-title">Price</h3>
               <ul class="filter-options-list">
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="price" value="free"><span>Free</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="price" value="paid"><span>Paid</span></label></li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="price" value="free">
+                    <span>Free</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="price" value="paid">
+                    <span>Paid</span>
+                  </label>
+                </li>
               </ul>
             </div>
 
             <hr class="filter-divider">
+
             <!-- Group 4: Rating -->
             <div class="filter-group">
               <h3 class="filter-group-title">Rating</h3>
               <ul class="filter-options-list">
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="rating" value="4.5"><span>4.5 &amp; up</span></label></li>
-                <li><label class="filter-checkbox-label"><input type="checkbox" name="rating" value="4.0"><span>4.0 &amp; up</span></label></li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="rating" value="4.5">
+                    <span>4.5 &amp; up</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="filter-checkbox-label">
+                    <input type="checkbox" name="rating" value="4.0">
+                    <span>4.0 &amp; up</span>
+                  </label>
+                </li>
               </ul>
             </div>
+
             <!-- Pure HTML Reset Button -->
             <button type="reset" class="clear-filters-btn" id="clearFiltersBtn">Clear All Filters</button>
           </form>
         </aside>
 
-                <div class="explore-main-content">
+        <!-- ================= RIGHT COLUMN: COURSES GRID ================= -->
+        <div class="explore-main-content">
           <!-- Top Row Header -->
           <div class="content-header-row">
             <div class="content-header-left">
@@ -218,26 +337,38 @@
             </div>
           </div>
 
+          <!-- 9 Course Cards Grid -->
           <div class="courses-grid" id="coursesGrid" role="region" aria-label="Courses Catalog">
+
             <!-- Card 1: Web Development -->
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge">Best Seller</span>
-                <img src="Assets-2/course-web-dev.png" alt="Complete Web Development Bootcamp" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-web-dev.png" alt="Complete Web Development Bootcamp" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="#">Complete Web Development Bootcamp</a></h3>
+                <h3 class="card-course-title">
+                  <a href="#">Complete Web Development Bootcamp</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-rohit.png" alt="Rohit Sharma" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Rohit Sharma</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.8</span>
                     <span class="rating-count">(2.4K)</span>
                   </div>
-                  <a href="#" class="card-price-action" aria-label="Enroll for ₹699"><span>₹699</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="#" class="card-price-action" aria-label="Enroll in Complete Web Development Bootcamp for ₹699">
+                    <span>₹699</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
@@ -246,21 +377,31 @@
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge trending">Trending</span>
-                <img src="Assets-2/course-ui-ux.png" alt="UI/UX Design Mastery Course" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-ui-ux.png" alt="UI/UX Design Mastery Course" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="#">UI/UX Design Mastery Course</a></h3>
+                <h3 class="card-course-title">
+                  <a href="#">UI/UX Design Mastery Course</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-priya.png" alt="Priya Sharma" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Priya Sharma</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.7</span>
                     <span class="rating-count">(1.8K)</span>
                   </div>
-                  <a href="#" class="card-price-action" aria-label="Enroll for ₹599"><span>₹599</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="#" class="card-price-action" aria-label="Enroll in UI/UX Design Mastery Course for ₹599">
+                    <span>₹599</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
@@ -269,21 +410,31 @@
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge popular">Popular</span>
-                <img src="Assets-2/course-digital-marketing.png" alt="Digital Marketing Complete Course" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-digital-marketing.png" alt="Digital Marketing Complete Course" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="#">Digital Marketing Complete Course</a></h3>
+                <h3 class="card-course-title">
+                  <a href="#">Digital Marketing Complete Course</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-aman.png" alt="Aman Verma" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Aman Verma</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.6</span>
                     <span class="rating-count">(3.1K)</span>
                   </div>
-                  <a href="#" class="card-price-action" aria-label="Enroll for ₹499"><span>₹499</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="#" class="card-price-action" aria-label="Enroll in Digital Marketing Complete Course for ₹499">
+                    <span>₹499</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
@@ -292,21 +443,31 @@
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge popular">Popular</span>
-                <img src="Assets-2/course-guitar.png" alt="Guitar Lessons for Beginners" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-guitar.png" alt="Guitar Lessons for Beginners" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="#">Guitar Lessons for Beginners</a></h3>
+                <h3 class="card-course-title">
+                  <a href="#">Guitar Lessons for Beginners</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-sneha.png" alt="Sneha Kapoor" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Sneha Kapoor</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.9</span>
                     <span class="rating-count">(1.2K)</span>
                   </div>
-                  <a href="#" class="card-price-action" aria-label="Enroll for ₹399"><span>₹399</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="#" class="card-price-action" aria-label="Enroll in Guitar Lessons for Beginners for ₹399">
+                    <span>₹399</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
@@ -315,21 +476,31 @@
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge">Best Seller</span>
-                <img src="Assets-2/course-data-science.png" alt="Data Science Fundamentals" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-data-science.png" alt="Data Science Fundamentals" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="#">Data Science Fundamentals</a></h3>
+                <h3 class="card-course-title">
+                  <a href="#">Data Science Fundamentals</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-karan.png" alt="Karan Mehta" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Karan Mehta</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.7</span>
                     <span class="rating-count">(2.1K)</span>
                   </div>
-                  <a href="#" class="card-price-action" aria-label="Enroll for ₹799"><span>₹799</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="#" class="card-price-action" aria-label="Enroll in Data Science Fundamentals for ₹799">
+                    <span>₹799</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
@@ -338,21 +509,31 @@
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge trending">Trending</span>
-                <img src="Assets-2/course-video-editing.png" alt="Video Editing Essentials" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-video-editing.png" alt="Video Editing Essentials" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="#">Video Editing Essentials</a></h3>
+                <h3 class="card-course-title">
+                  <a href="#">Video Editing Essentials</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-neha.png" alt="Neha Das" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Neha Das</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.6</span>
                     <span class="rating-count">(946)</span>
                   </div>
-                  <a href="#" class="card-price-action" aria-label="Enroll for ₹449"><span>₹449</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="#" class="card-price-action" aria-label="Enroll in Video Editing Essentials for ₹449">
+                    <span>₹449</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
@@ -361,21 +542,31 @@
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge popular">Popular</span>
-                <img src="Assets-2/course-graphic-design.png" alt="Graphic Design Basics" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-graphic-design.png" alt="Graphic Design Basics" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="#">Graphic Design Basics</a></h3>
+                <h3 class="card-course-title">
+                  <a href="#">Graphic Design Basics</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-arjun.png" alt="Arjun Singh" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Arjun Singh</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.4</span>
                     <span class="rating-count">(782)</span>
                   </div>
-                  <a href="#" class="card-price-action" aria-label="Enroll for ₹349"><span>₹349</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="#" class="card-price-action" aria-label="Enroll in Graphic Design Basics for ₹349">
+                    <span>₹349</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
@@ -384,21 +575,31 @@
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge">Best Seller</span>
-                <img src="Assets-2/course-excel-basics.png" alt="Excel & Computer Basics" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-excel-basics.png" alt="Excel & Computer Basics" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="../T2/index.html">Excel &amp; Computer Basics</a></h3>
+                <h3 class="card-course-title">
+                  <a href="../T2/index.html">Excel &amp; Computer Basics</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-ananya.png" alt="Ananya Roy" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Ananya Roy</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.6</span>
                     <span class="rating-count">(1.5K)</span>
                   </div>
-                  <a href="../T2/index.html" class="card-price-action" aria-label="Enroll for ₹299"><span>₹299</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="../T2/index.html" class="card-price-action" aria-label="Enroll in Excel & Computer Basics for ₹299">
+                    <span>₹299</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
@@ -407,24 +608,35 @@
             <article class="course-card">
               <div class="card-media-wrapper">
                 <span class="card-badge trending">Trending</span>
-                <img src="Assets-2/course-beauty-lifestyle.png" alt="Beauty & Lifestyle Mastery" class="card-thumbnail" loading="lazy">
+                <img src="Assets-2/course-beauty-lifestyle.png" alt="Beauty & Lifestyle Mastery" class="card-thumbnail" loading="lazy" decoding="async">
               </div>
               <div class="card-body">
-                <h3 class="card-course-title"><a href="#">Beauty &amp; Lifestyle Mastery</a></h3>
+                <h3 class="card-course-title">
+                  <a href="#">Beauty &amp; Lifestyle Mastery</a>
+                </h3>
                 <div class="card-instructor-row">
                   <img src="Assets-2/avatar-isha.png" alt="Isha Malhotra" class="instructor-avatar" width="28" height="28" loading="lazy">
                   <span class="instructor-name">Isha Malhotra</span>
                 </div>
                 <div class="card-footer-row">
                   <div class="card-rating-block">
-                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="star-icon" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
                     <span class="rating-score">4.5</span>
                     <span class="rating-count">(673)</span>
                   </div>
-                  <a href="#" class="card-price-action" aria-label="Enroll for ₹499"><span>₹499</span><svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="13" y2="8"></line><polyline points="9 4 13 8 9 12"></polyline></svg></a>
+                  <a href="#" class="card-price-action" aria-label="Enroll in Beauty & Lifestyle Mastery for ₹499">
+                    <span>₹499</span>
+                    <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="3" y1="8" x2="13" y2="8"></line>
+                      <polyline points="9 4 13 8 9 12"></polyline>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </article>
+
           </div>
 
           <!-- Pure HTML Pagination Controls -->
@@ -445,6 +657,7 @@
               </svg>
             </a>
           </nav>
+
         </div>
       </div>
     </section>
@@ -453,6 +666,8 @@
   <!-- ================= FOOTER SECTION ================= -->
   <footer class="site-footer" id="contact">
     <div class="footer-top-container">
+      
+      <!-- Column 1: Brand Info -->
       <div class="footer-brand-col">
         <a href="index.html" class="footer-brand-logo" aria-label="FlipStuck Home">
           <svg class="footer-brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -461,22 +676,107 @@
           </svg>
           <span>FlipStuck</span>
         </a>
-        <p class="footer-brand-desc">Your all-in-one learning platform to explore, learn and grow without limits.</p>
+        <p class="footer-brand-desc">
+          Your all-in-one learning platform to explore, learn and grow without limits.
+        </p>
         <ul class="footer-contact-list">
-          <li class="footer-contact-item"><a href="mailto:hello@flipstuck.com">hello@flipstuck.com</a></li>
-          <li class="footer-contact-item"><a href="tel:+910000000000">+91 00000 00000</a></li>
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:hello@flipstuck.com">hello@flipstuck.com</a>
+          </li>
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <a href="tel:+910000000000">+91 00000 00000</a>
+          </li>
+        </ul>
+        <div class="footer-social-links" aria-label="Social Media Links">
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Courses -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-header">
+          <span class="footer-col-dot" aria-hidden="true"></span>
+          <span>Courses</span>
+        </h4>
+        <ul class="footer-col-links">
+          <li><a href="index.html">All Courses</a></li>
         </ul>
       </div>
-      <div class="footer-nav-col"><h4 class="footer-col-header"><span class="footer-col-dot" aria-hidden="true"></span><span>Courses</span></h4><ul class="footer-col-links"><li><a href="index.html">All Courses</a></li></ul></div>
-      <div class="footer-nav-col"><h4 class="footer-col-header"><span class="footer-col-dot" aria-hidden="true"></span><span>Resources</span></h4><ul class="footer-col-links"><li><a href="#">Career Paths</a></li><li><a href="#">Help Center</a></li></ul></div>
-      <div class="footer-nav-col"><h4 class="footer-col-header"><span class="footer-col-dot" aria-hidden="true"></span><span>Company</span></h4><ul class="footer-col-links"><li><a href="#">About Us</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
-      <div class="footer-nav-col"><h4 class="footer-col-header"><span class="footer-col-dot" aria-hidden="true"></span><span>Support</span></h4><ul class="footer-col-links"><li><a href="#">FAQs</a></li><li><a href="#">Terms &amp; Conditions</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Refund Policy</a></li></ul></div>
+
+      <!-- Column 3: Resources -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-header">
+          <span class="footer-col-dot" aria-hidden="true"></span>
+          <span>Resources</span>
+        </h4>
+        <ul class="footer-col-links">
+          <li><a href="#">Career Paths</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Company -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-header">
+          <span class="footer-col-dot" aria-hidden="true"></span>
+          <span>Company</span>
+        </h4>
+        <ul class="footer-col-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Support -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-header">
+          <span class="footer-col-dot" aria-hidden="true"></span>
+          <span>Support</span>
+        </h4>
+        <ul class="footer-col-links">
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+
     </div>
 
     <!-- Panoramic Landscape Artwork Banner -->
     <div class="footer-landscape-banner">
       <img src="Assets-2/footer-bg.jpg" alt="Artistic landscape illustration with mountains, rivers, and pavilions" class="footer-landscape-img" loading="lazy">
     </div>
+
     <!-- Copyright Bar -->
     <div class="footer-bottom-bar">
       <div class="footer-bottom-container">
@@ -491,5 +791,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- Pure HTML & CSS Back to Top Link -->
+  <a href="#top" class="back-to-top" aria-label="Scroll back to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
 </body>
 </html>

@@ -1079,3 +1079,350 @@ button {
   font-weight: 600;
 }
 
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.footer-top-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 60px 24px 30px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.footer-brand-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.footer-brand-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 320px;
+}
+
+.footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.footer-contact-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.footer-contact-item a:hover {
+  color: var(--color-text-primary);
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-circle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  transition: var(--transition);
+}
+
+.social-circle-btn:hover {
+  background-color: var(--color-brand);
+  border-color: var(--color-brand);
+  transform: translateY(-2px);
+}
+
+.social-circle-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Footer Nav Columns */
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.footer-col-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-brand);
+}
+
+.footer-col-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-col-links a {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  transition: var(--transition);
+}
+
+.footer-col-links a:hover {
+  color: var(--color-text-primary);
+  padding-left: 2px;
+}
+
+/* Panoramic Landscape Illustration Banner */
+.footer-landscape-banner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 10px auto 0;
+  padding: 0 24px;
+}
+
+.footer-landscape-img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.9;
+  filter: contrast(1.05);
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom-bar {
+  border-top: 1px solid var(--color-border);
+  padding: 22px 24px;
+}
+
+.footer-bottom-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-legal-links a:hover {
+  color: var(--color-text-primary);
+}
+
+.footer-legal-separator {
+  color: #cbd5e1;
+}
+
+/* Floating Back-to-Top Button (Pure HTML/CSS) */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-card);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0.85;
+  transition: var(--transition);
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  background-color: var(--color-brand);
+  border-color: var(--color-brand);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--color-brand-glow);
+}
+
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN & MEDIA QUERIES (PURE CSS)
+   ========================================================================== */
+.mobile-filter-toggle-checkbox {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .explore-layout-container {
+    grid-template-columns: 230px 1fr;
+    gap: 28px;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .footer-top-container {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links,
+  .header-action {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .mobile-filter-bar {
+    display: flex;
+  }
+
+  .explore-layout-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Slide-in Drawer Filter Sidebar on Mobile (Pure CSS) */
+  .filter-sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1005;
+    border-radius: 0;
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-filter-toggle-checkbox:checked ~ main .filter-sidebar {
+    left: 0;
+  }
+
+  .sidebar-close-btn {
+    display: flex;
+  }
+
+  /* Backdrop for mobile filter (Pure CSS) */
+  .filter-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    z-index: 1004;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .mobile-filter-toggle-checkbox:checked ~ .filter-backdrop {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sort-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+
+  .footer-top-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
