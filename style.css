@@ -299,6 +299,31 @@ button {
   transition: var(--transition);
 }
 
+.mobile-menu-close-btn {
+  display: none !important;
+}
+
+body:has(#mobileNavDrawer:target) .mobile-menu-open-btn {
+  display: none !important;
+}
+
+body:has(#mobileNavDrawer:target) .mobile-menu-close-btn {
+  display: flex !important;
+}
+
+.mobile-menu-close-btn .hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-close-btn .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+.mobile-menu-close-btn .hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* Animated Hamburger to X */
 .mobile-menu-toggle-checkbox:checked ~ .site-header .hamburger-bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -374,6 +399,13 @@ button {
   padding-left: 4px;
 }
 
+.mobile-nav-item-label {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .mobile-nav-action {
   margin-top: 0;
   padding-top: 4px;
@@ -383,12 +415,36 @@ button {
   width: 100%;
 }
 
-/* Mobile Menu Opened States (Top Down) */
+/* Scroll Margins for Fixed Header Offset */
+#courses,
+#exploreGrid,
+#categories,
+#contact,
+.scroll-target-anchor {
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+.scroll-target-anchor {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+}
+
+/* Mobile Menu Opened States (Top Down: :target or :checked) */
+#mobileNavDrawer:target ~ .mobile-nav-backdrop,
+body:has(#mobileNavDrawer:target) .mobile-nav-backdrop,
 .mobile-menu-toggle-checkbox:checked ~ .mobile-nav-backdrop {
   opacity: 1;
   pointer-events: auto;
 }
 
+#mobileNavDrawer:target,
 .mobile-menu-toggle-checkbox:checked ~ .mobile-nav-drawer {
   transform: translateY(0);
   visibility: visible;
@@ -1366,7 +1422,19 @@ button {
     display: none;
   }
 
-  .mobile-menu-btn {
+  .mobile-menu-open-btn {
+    display: flex;
+  }
+
+  .mobile-menu-close-btn {
+    display: none;
+  }
+
+  body:has(#mobileNavDrawer:target) .mobile-menu-open-btn {
+    display: none;
+  }
+
+  body:has(#mobileNavDrawer:target) .mobile-menu-close-btn {
     display: flex;
   }
 
