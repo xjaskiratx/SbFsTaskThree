@@ -241,12 +241,45 @@ button {
   padding: 6px 0;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
   color: var(--color-text-primary);
 }
 
+.nav-link.active {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
 .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-brand);
+  border-radius: 2px;
+}
+
+body:has(#categories:target) .nav-link[href="#courses"]::after,
+body:has(#contact:target) .nav-link[href="#courses"]::after {
+  display: none;
+}
+
+body:has(#categories:target) .nav-link[href="#courses"],
+body:has(#contact:target) .nav-link[href="#courses"] {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+body:has(#categories:target) .nav-link[href="#categories"],
+body:has(#contact:target) .nav-link[href="#contact"] {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+body:has(#categories:target) .nav-link[href="#categories"]::after,
+body:has(#contact:target) .nav-link[href="#contact"]::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -383,24 +416,81 @@ body:has(#mobileNavDrawer:target) .mobile-menu-close-btn {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 .mobile-nav-link {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  padding: 8px 0;
-  display: block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: none;
 }
 
-.mobile-nav-link:hover,
+.mobile-nav-link:hover {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-primary);
+  padding-left: 18px;
+}
+
 .mobile-nav-link.active {
-  color: var(--color-brand-accent);
-  padding-left: 4px;
+  background-color: var(--color-brand-subtle);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  padding-left: 14px;
+}
+
+.mobile-nav-link.active::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-brand);
+  margin-right: 10px;
+  box-shadow: 0 0 6px var(--color-brand-glow);
+  flex-shrink: 0;
+}
+
+/* Dynamic Active State on In-Page Section Targets */
+body:has(#categories:target) .mobile-nav-link[href="#categories"],
+body:has(#contact:target) .mobile-nav-link[href="#contact"] {
+  background-color: var(--color-brand-subtle);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  padding-left: 14px;
+}
+
+body:has(#categories:target) .mobile-nav-link[href="#categories"]::before,
+body:has(#contact:target) .mobile-nav-link[href="#contact"]::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-brand);
+  margin-right: 10px;
+  box-shadow: 0 0 6px var(--color-brand-glow);
+  flex-shrink: 0;
+}
+
+body:has(#categories:target) .mobile-nav-link[href="#courses"],
+body:has(#contact:target) .mobile-nav-link[href="#courses"] {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+body:has(#categories:target) .mobile-nav-link[href="#courses"]::before,
+body:has(#contact:target) .mobile-nav-link[href="#courses"]::before {
+  display: none;
 }
 
 .mobile-nav-item-label {
