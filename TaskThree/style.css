@@ -416,81 +416,39 @@ body:has(#mobileNavDrawer:target) .mobile-menu-close-btn {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 .mobile-nav-link {
-  font-size: 1.02rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  padding: 8px 0;
+  display: block;
   text-decoration: none;
-  transition: all 0.2s ease;
-  border-bottom: none;
+  background: transparent;
+  background-color: transparent;
+  transition: color 0.2s ease;
 }
 
-.mobile-nav-link:hover {
-  background-color: var(--color-bg-subtle);
-  color: var(--color-text-primary);
-  padding-left: 18px;
-}
-
+.mobile-nav-link:hover,
 .mobile-nav-link.active {
-  background-color: var(--color-brand-subtle);
-  color: var(--color-text-primary);
-  font-weight: 700;
-  padding-left: 14px;
-}
-
-.mobile-nav-link.active::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-brand);
-  margin-right: 10px;
-  box-shadow: 0 0 6px var(--color-brand-glow);
-  flex-shrink: 0;
+  color: var(--color-brand-accent);
+  background: transparent;
+  background-color: transparent;
 }
 
 /* Dynamic Active State on In-Page Section Targets */
 body:has(#categories:target) .mobile-nav-link[href="#categories"],
 body:has(#contact:target) .mobile-nav-link[href="#contact"] {
-  background-color: var(--color-brand-subtle);
-  color: var(--color-text-primary);
-  font-weight: 700;
-  padding-left: 14px;
-}
-
-body:has(#categories:target) .mobile-nav-link[href="#categories"]::before,
-body:has(#contact:target) .mobile-nav-link[href="#contact"]::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-brand);
-  margin-right: 10px;
-  box-shadow: 0 0 6px var(--color-brand-glow);
-  flex-shrink: 0;
+  color: var(--color-brand-accent);
 }
 
 body:has(#categories:target) .mobile-nav-link[href="#courses"],
 body:has(#contact:target) .mobile-nav-link[href="#courses"] {
-  background-color: transparent;
-  color: var(--color-text-secondary);
-  font-weight: 500;
-}
-
-body:has(#categories:target) .mobile-nav-link[href="#courses"]::before,
-body:has(#contact:target) .mobile-nav-link[href="#courses"]::before {
-  display: none;
+  color: var(--color-text-primary);
 }
 
 .mobile-nav-item-label {
